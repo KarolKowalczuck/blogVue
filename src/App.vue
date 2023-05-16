@@ -35,6 +35,7 @@ export default {
         content: this.formData.content,
         datetime: dataDaPostagem,
       });
+      
 
       this.formData = {
         title: "",
