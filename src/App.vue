@@ -20,7 +20,23 @@ export default {
         title: "",
         content: "",
       },
+      search: "",
     };
+  },
+  computed: {
+    filteredPosts() {
+      // se search estiver vazio, retorne a lista completa de posts
+      if(!this.search) return this.posts;
+
+      // se tiver qualquer coisa em search, faz o filtro
+      const listaFiltrada = [];
+      for (const post of this.posts) {
+        if (post.title.includes(this.search)) {
+          listaFiltrada.push(post);
+        }
+      }
+      return listaFiltrada;
+    },
   },
   methods: {
     handleClick(event) {
@@ -35,7 +51,6 @@ export default {
         content: this.formData.content,
         datetime: dataDaPostagem,
       });
-
 
       this.formData = {
         title: "",
@@ -52,8 +67,10 @@ export default {
 </script>
 
 <template>
+  <input v-model="search" placeholder="Procure pelo título do post..." />
+
   <div id="lista-posts" class="flex">
-    <div class="post flex" v-for="post in posts" :key="post.key">
+    <div class="post flex" v-for="post in filteredPosts" :key="post.key">
       <h3>{{ post.title }}</h3>
       <h4>{{ post.datetime }}</h4>
       <p>{{ post.content }}</p>
@@ -80,7 +97,6 @@ export default {
 </template>
 
 <style scoped>
-
 template {
   width: 100vw;
   height: 100vh;
@@ -89,9 +105,6 @@ template {
 
 form {
   border: 2px solid blue;
-
-
-
 }
 
 form > * {
@@ -107,18 +120,14 @@ form > * {
 #lista-posts * {
   background-color: whitesmoke;
   color: rgb(36, 35, 35);
-  
-
-  
 }
 .post {
   border: 1px solid black;
-  
+
   width: 60vw;
   height: 30vh;
   justify-content: flex-start;
   align-items: flex-start;
   margin-block-end: 20px;
 }
-
 </style>
