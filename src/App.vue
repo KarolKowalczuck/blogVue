@@ -35,7 +35,7 @@ export default {
         content: this.formData.content,
         datetime: dataDaPostagem,
       });
-      
+
 
       this.formData = {
         title: "",
@@ -52,15 +52,15 @@ export default {
 </script>
 
 <template>
-  <div id="lista-posts">
-    <div class="post" v-for="post in posts" :key="post.key">
+  <div id="lista-posts" class="flex">
+    <div class="post flex" v-for="post in posts" :key="post.key">
       <h3>{{ post.title }}</h3>
       <h4>{{ post.datetime }}</h4>
       <p>{{ post.content }}</p>
     </div>
   </div>
 
-  <form action="">
+  <form action="" class="flex">
     <input v-model="formData.title" placeholder="Titulo" />
     <textarea
       name="content"
@@ -80,12 +80,45 @@ export default {
 </template>
 
 <style scoped>
+
+template {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 form {
-  display: flex;
-  flex-direction: column;
+  border: 2px solid blue;
+
+
+
 }
 
 form > * {
   margin: 1rem;
+  background-color: whitesmoke;
 }
+
+#lista-posts {
+  justify-content: center;
+  align-items: center;
+}
+
+#lista-posts * {
+  background-color: whitesmoke;
+  color: rgb(36, 35, 35);
+  
+
+  
+}
+.post {
+  border: 1px solid black;
+  
+  width: 60vw;
+  height: 30vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-block-end: 20px;
+}
+
 </style>

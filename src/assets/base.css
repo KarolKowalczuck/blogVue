@@ -1,0 +1,10 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px 10px;
+    background-color: rgb(182, 182, 182);
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
