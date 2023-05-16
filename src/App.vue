@@ -114,6 +114,11 @@ form > * {
 .post {
   border: 1px solid black;
   
+  border-radius: 0px;
+  background: #e0e0e0;
+  box-shadow:  5px 5px 20px #5a5a5a,
+             -5px -5px 20px #ffffff;
+
   width: 60vw;
   height: 30vh;
   justify-content: flex-start;
