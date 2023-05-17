@@ -67,7 +67,7 @@ export default {
 </script>
 
 <template>
-  <input v-model="search" placeholder="Procure pelo título do post..." />
+  <input v-model="search" placeholder="Procure pelo título do post..." class="search"/>
 
   <div id="lista-posts" class="flex">
     <div class="post flex" v-for="post in filteredPosts" :key="post.key">
@@ -77,7 +77,7 @@ export default {
     </div>
   </div>
 
-  <form action="" class="flex">
+  <form action="" class="forms flex">
     <input v-model="formData.title" placeholder="Titulo" />
     <textarea
       name="content"
@@ -90,7 +90,7 @@ export default {
     >
     </textarea>
 
-    <button type="button" @click="handleClick">Salvar</button>
+    <button type="button" @click="handleClick" class="flex">Salvar</button>
   </form>
 
   <RouterView />
@@ -103,12 +103,26 @@ template {
   overflow: hidden;
 }
 
-form {
-  border: 2px solid blue;
-
-
-
+input {
+  padding: 5px;
+  padding-left: 20px;
+  height: 30px;
+  width: 60vw;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
+.search {
+  border: 1px solid palevioletred;
+  background-color: whitesmoke;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  
+}
+
 .post {
   /* border: 1px solid rgb(54, 54, 54); */
   
@@ -131,9 +145,16 @@ form {
 #lista-posts * {
   background-color: whitesmoke;
   color: rgb(36, 35, 35);
-  
 
+}
+.forms {  
+  border-radius: 20px;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px whitesmoke;
   
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
 }
 
 form > * {
