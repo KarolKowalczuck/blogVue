@@ -1,10 +1,13 @@
+@import "form.css";
+@import "posts.css";
+
 * {
-    font-family: 'Montserrat', sans-serif;
-    padding: 5px 10px;
-    background-color: #ece7e1;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px 10px;
+  background-color: #ece7e1;
 }
 
 .flex {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
