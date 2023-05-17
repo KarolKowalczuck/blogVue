@@ -110,11 +110,22 @@ template {
 
 form {
   border: 2px solid blue;
-}
 
-form > * {
-  margin: 1rem;
-  background-color: whitesmoke;
+
+
+}
+.post {
+  /* border: 1px solid rgb(54, 54, 54); */
+  
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 20px #5a5a5a, -5px -5px 20px #ffffff;
+  
+  width: 60vw;
+  height: 30vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-block-end: 20px;
 }
 
 #lista-posts {
@@ -125,19 +136,68 @@ form > * {
 #lista-posts * {
   background-color: whitesmoke;
   color: rgb(36, 35, 35);
-}
-.post {
-  border: 1px solid black;
   
-  border-radius: 0px;
-  background: #e0e0e0;
-  box-shadow:  5px 5px 20px #5a5a5a,
-             -5px -5px 20px #ffffff;
 
+  
+}
+
+form > * {
+  margin: 1rem;
+  background-color: whitesmoke;
+  border: none;
+}
+
+textarea {
+  padding: 10px;
+  padding-left: 20px;
+  height: 250px;
   width: 60vw;
-  height: 30vh;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-block-end: 20px;
+  font-size: 16px;
+  color: rgb(54, 54, 54);
+  border-radius: 30px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+
+button {
+  background-color: whitesmoke;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(54, 54, 54);
+
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border-radius: 150px;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+button:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 200px;
+  height: 100px;
+  content: " ";
+  cursor: pointer;
+  transition: 0.3s ease-out;
+  border-radius: 150px;
+  filter: blur(7px);
+  box-shadow: 8px 8px 20px #747475, -8px -8px 20px #fff;
+
+}
+
+button:hover:before {
+  box-shadow: 8px 8px 20px #747475, -8px -8px 20px #fff,
+  inset -8px -8px 20px #fff, inset 8px 8px 20px #747475;
+
+  /* transition: 0.3s ease-in;
+  transform: scale(1.1); */
 }
 </style>
