@@ -1,5 +1,6 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import "../src/assets/base.css";
 
 export default {
   data() {
@@ -26,7 +27,7 @@ export default {
   computed: {
     filteredPosts() {
       // se search estiver vazio, retorne a lista completa de posts
-      if(!this.search) return this.posts;
+      if (!this.search) return this.posts;
 
       // se tiver qualquer coisa em search, faz o filtro
       const listaFiltrada = [];
@@ -67,7 +68,11 @@ export default {
 </script>
 
 <template>
-  <input v-model="search" placeholder="Procure pelo título do post..." />
+  <input
+    v-model="search"
+    placeholder="Procure pelo título do post..."
+    class="search"
+  />
 
   <div id="lista-posts" class="flex">
     <div class="post flex" v-for="post in filteredPosts" :key="post.key">
@@ -77,7 +82,7 @@ export default {
     </div>
   </div>
 
-  <form action="" class="flex">
+  <form action="" class="forms flex">
     <input v-model="formData.title" placeholder="Titulo" />
     <textarea
       name="content"
@@ -90,7 +95,7 @@ export default {
     >
     </textarea>
 
-    <button type="button" @click="handleClick">Salvar</button>
+    <button type="button" @click="handleClick" class="flex">Salvar</button>
   </form>
 
   <RouterView />
