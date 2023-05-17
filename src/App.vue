@@ -20,7 +20,23 @@ export default {
         title: "",
         content: "",
       },
+      search: "",
     };
+  },
+  computed: {
+    filteredPosts() {
+      // se search estiver vazio, retorne a lista completa de posts
+      if(!this.search) return this.posts;
+
+      // se tiver qualquer coisa em search, faz o filtro
+      const listaFiltrada = [];
+      for (const post of this.posts) {
+        if (post.title.includes(this.search)) {
+          listaFiltrada.push(post);
+        }
+      }
+      return listaFiltrada;
+    },
   },
   methods: {
     handleClick(event) {
@@ -35,7 +51,6 @@ export default {
         content: this.formData.content,
         datetime: dataDaPostagem,
       });
-
 
       this.formData = {
         title: "",
@@ -52,8 +67,10 @@ export default {
 </script>
 
 <template>
+  <input v-model="search" placeholder="Procure pelo título do post..." />
+
   <div id="lista-posts" class="flex">
-    <div class="post flex" v-for="post in posts" :key="post.key">
+    <div class="post flex" v-for="post in filteredPosts" :key="post.key">
       <h3>{{ post.title }}</h3>
       <h4>{{ post.datetime }}</h4>
       <p>{{ post.content }}</p>
@@ -80,24 +97,17 @@ export default {
 </template>
 
 <style scoped>
-
 template {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
-input {
-  padding: 5px;
-  padding-left: 20px;
-  height: 30px;
-  width: 60vw;
-  font-size: 14px;
-  border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
-}
-.search {
-  border: 1px solid palevioletred;
+form {
+  border: 2px solid blue;
+
+
+
 }
 .post {
   /* border: 1px solid rgb(54, 54, 54); */
@@ -120,18 +130,10 @@ input {
 
 #lista-posts * {
   background-color: whitesmoke;
-  color: rgb(54, 54, 54);
-}
+  color: rgb(36, 35, 35);
+  
 
-.forms {
   
-  border-radius: 20px;
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px whitesmoke;
-  
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0;
 }
 
 form > * {
@@ -193,5 +195,4 @@ button:hover:before {
   /* transition: 0.3s ease-in;
   transform: scale(1.1); */
 }
-
 </style>
