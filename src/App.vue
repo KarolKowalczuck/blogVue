@@ -5,18 +5,7 @@ import "../src/assets/base.css";
 export default {
   data() {
     return {
-      posts: [
-        // {
-        //   title: "Meu primeiro post",
-        //   datetime: Date.now(),
-        //   content: "Postar aqui é muito legal",
-        // },
-        // {
-        //   title: "Meu segundo post",
-        //   datetime: Date.now(),
-        //   content: "Postar aqui não é muito legal",
-        // },
-      ],
+      posts: [],
     };
   },
   methods: {
@@ -28,16 +17,20 @@ export default {
 </script>
 
 <template>
-  <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/create">Novo Post</RouterLink>
+  <header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/create">Novo Post</RouterLink>
+      </nav>
+      </header>
 
   <RouterView :posts="posts" @create-post="addPost" />
 </template>
 
 <style scoped>
-* {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
+
+
+
+
+
 </style>
