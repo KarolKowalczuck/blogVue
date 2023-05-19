@@ -1,5 +1,21 @@
-form {
+input {
+  outline: none;
+  border: none;
 
+  margin-top: 10px;
+  padding-left: 20px;
+  height: 30px;
+  background-color: whitesmoke;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+
+  caret-color: #497e7e;
+
+  margin-left: 20px;
+}
+
+form {
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -10,7 +26,8 @@ form {
 
   display: block;
   outline: none;
-  }
+
+}
 
 form > * {
   margin: 1rem;
@@ -34,7 +51,8 @@ button {
   background-color: #ece7e1;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
-  color: rgb(54, 54, 54);
+  color: #497e7e;
+  font-weight: bold;
 
   position: relative;
   width: 200px;
