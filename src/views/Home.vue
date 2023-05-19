@@ -1,4 +1,6 @@
 <script>
+import { RouterLink } from "vue-router";
+
 export default {
   props: {
     posts: Array,
@@ -15,13 +17,24 @@ export default {
 
       // se tiver qualquer coisa em search, faz o filtro
       const listaFiltrada = [];
-      
+
       for (const post of this.posts) {
         if (post.title.includes(this.search)) {
           listaFiltrada.push(post);
         }
       }
       return listaFiltrada;
+    },
+  },
+  methods: {
+    getPostId(title) {
+      // passa pela lista de posts - não filtrada
+      for (const index in this.posts) {
+        //acessa o post na poição index da lista de posts
+        const post = this.posts[index];
+        //verifica se o titulo do post atual é igual ao título buscado
+        if (post.title === title) return index;
+      }
     },
   },
 };
@@ -35,8 +48,17 @@ export default {
   />
 
   <div id="lista-posts" class="flex">
-    <div class="post flex" v-for="post in filteredPosts" :key="post.key">
-      <h3>{{ post.title }}</h3>
+    <div
+      class="post flex"
+      v-for="(post, index) in filteredPosts"
+      :key="post.key"
+    >
+      <h3>
+        {{ post.title }}
+        <RouterLink :to="`/edit/${getPostId(post.title)}`">
+          <span class="material-symbols-outlined">more_vert</span>
+        </RouterLink>
+      </h3>
       <h5>{{ post.datetime }}</h5>
       <p>{{ post.content }}</p>
     </div>
