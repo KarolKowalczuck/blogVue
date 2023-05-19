@@ -46,7 +46,7 @@ export default {
 
 <template>
   <form action="" class="forms flex">
-    <input v-model="formData.title" placeholder="Titulo" />
+    <input class="title" v-model="formData.title" placeholder="Titulo" maxlength="30"/>
 
     <textarea
       v-model="formData.content"
@@ -61,4 +61,33 @@ export default {
   </form>
 </template>
 
-<style scoped></style>
+<style scoped>
+input {
+  outline: none;
+  border: none;
+
+  margin-top: 10px;
+  padding-left: 20px;
+  height: 30px;
+  width: 60vw;
+  background-color: whitesmoke;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+
+  color: #3d3d3d;
+  caret-color: #497e7e;
+
+  margin-left: 20px;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+textarea {
+  word-break: auto;
+}
+</style>
