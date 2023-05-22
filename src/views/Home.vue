@@ -75,8 +75,12 @@ export default {
       :key="post.key"
     >
     <!-- Esse é o post com o id {{ getPostId(post.title) }} -->
-      <h3>
-        {{ post.title }}
+      <div class="flex">
+        <RouterLink :to="`/detail/${getPostId(post.title)}`">
+          <h3>
+            {{ post.title }}
+          </h3>
+        </RouterLink>
         <RouterLink :to="`/edit/${getPostId(post.title)}`">
           <span class="material-symbols-outlined">more_vert</span>
         </RouterLink>
@@ -85,7 +89,7 @@ export default {
           @click="setupModal(getPostId(post.title))"
           >delete</span
         >
-      </h3>
+      </div>
       <h5>{{ post.datetime }}</h5>
       <p>{{ post.content }}</p>
     </div>
