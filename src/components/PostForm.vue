@@ -75,7 +75,7 @@ export default {
     >
     </textarea>
 
-    <button type="button" @click="handleCreatePost" class="flex">Salvar</button>
+    <button type="button" @click="handleCreatePost" class="flex form-button">Salvar</button>
   </form>
 </template>
 

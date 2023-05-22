@@ -47,7 +47,7 @@ textarea {
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
-button {
+.form-button {
   background-color: #ece7e1;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
@@ -62,7 +62,7 @@ button {
   justify-content: center;
 }
 
-button:before {
+.form-button:before {
   position: absolute;
   top: 0;
   right: 0;
@@ -79,7 +79,7 @@ button:before {
   box-shadow: 8px 8px 20px #747475, -8px -8px 20px #fff;
 }
 
-button:hover:before {
+.form-button:hover:before {
   box-shadow: 8px 8px 20px #747475, -8px -8px 20px #fff,
     inset -8px -8px 20px #fff, inset 8px 8px 20px #747475;
 
