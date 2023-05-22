@@ -1,0 +1,37 @@
+.modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid pink;
+
+    /* sensação de fundo meio apagado */
+    background: rgba(0, 0, 0, 0.2);
+
+
+}
+
+.modal-content {
+    background-color: darkseagreen;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.modal-actions {
+    display: flex;
+    outline: none;
+    border: none;
+
+
+}

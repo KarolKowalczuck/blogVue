@@ -1,5 +1,7 @@
 @import "form.css";
 @import "posts.css";
+@import "modal.css";
+@import "colors.css";
 
 html {
   width: 100vw;
