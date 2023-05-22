@@ -99,8 +99,8 @@ export default {
       </p>
 
       <div class="modal-actions">
-        <button class="bg-error" @click="setupModal">Cancelar</button>
-        <button class="bg-success" @click="deletePost">Confirmar</button>
+        <button class="modal-bt" @click="setupModal">Cancelar</button>
+        <button class="modal-bt" @click="deletePost">Confirmar</button>
       </div>
     </div>
   </div>
