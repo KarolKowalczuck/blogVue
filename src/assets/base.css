@@ -1,12 +1,13 @@
 @import "form.css";
 @import "posts.css";
 @import "modal.css";
-@import "colors.css";
+@import "button.css";
 
 html {
   width: 100vw;
   height: 100vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 a {
   color: inherit;

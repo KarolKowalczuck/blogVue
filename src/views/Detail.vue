@@ -17,12 +17,12 @@ export default {
 </script>
 
 <template>
-  <h2>
+  <h2 class="detail-title">
     {{ post.title }}
   </h2>
-  <h4>{{ post.datetime }}</h4>
+  <h5 class="detail-date">{{ post.datetime }}</h5>
 
-  <textarea readonly :value="post.content"> </textarea>
+  <textarea readonly rows="30" cols="50" :value="post.content"> </textarea>
 </template>
 
 <style scoped>
@@ -31,6 +31,16 @@ textarea {
   outline: none;
   border: none;
 
-  width: 80%;
+  width: 60%;
+  height: fit-content;
+}
+
+body * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid salmon;
 }
 </style>

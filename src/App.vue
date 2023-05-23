@@ -9,12 +9,12 @@ export default {
         {
           title: "Meu primeiro post",
           datetime: "18/05/2023",
-          content: "Conteúdo do post.",
+          content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
         },
         {
           title: "Meu segundo post",
           datetime: "18/05/2023",
-          content: "Texto bem bacana.",
+          content: "Delectus vero deserunt ut laborum reprehenderit provident inventore id incidunt molestiae corrupti, nemo aperiam, iste cupiditate modi ipsum, repudiandae eos consequatur voluptates!",
         },
       ],
     };

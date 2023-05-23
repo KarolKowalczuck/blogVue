@@ -24,8 +24,7 @@ export default {
 
       const dataDaPostagem = `${now.getDate()}/${
         now.getMonth() + 1
-      }/${now.getFullYear()} - 
-      ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+      }/${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}`;
 
       // método 1:
       //this.post[this.posts.length] = {
@@ -57,7 +56,7 @@ export default {
 </script>
 
 <template>
-  Está editando: {{ isEditing }}
+  <!-- Está editando: {{ isEditing }} -->
   <form action="" class="forms flex">
     <input
       class="title"
@@ -72,10 +71,13 @@ export default {
       id=""
       cols="30"
       rows="10"
+      maxlength="1000"
     >
     </textarea>
 
-    <button type="button" @click="handleCreatePost" class="flex form-button">Salvar</button>
+    <button type="button" @click="handleCreatePost" class="flex form-button">
+      Salvar
+    </button>
   </form>
 </template>
 
@@ -86,7 +88,7 @@ input {
 
   margin-top: 10px;
   padding-left: 20px;
-  height: 30px;
+  height: 35px;
   width: 60vw;
   background-color: whitesmoke;
   font-size: 14px;
@@ -103,9 +105,21 @@ input {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  font-size: 18px;
 }
 
 textarea {
   word-break: auto;
+}
+
+.form-button {
+  width: 200px;
+  height: 100px;
+}
+
+.form-button ::before {
+  width: 200px;
+  height: 100px;
 }
 </style>
