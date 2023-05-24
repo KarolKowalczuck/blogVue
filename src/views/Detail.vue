@@ -22,25 +22,48 @@ export default {
   </h2>
   <h5 class="detail-date">{{ post.datetime }}</h5>
 
-  <textarea readonly rows="30" cols="50" :value="post.content"> </textarea>
+  <textarea
+    class="text-detail"
+    readonly
+    rows="30"
+    cols="50"
+    :value="post.content"
+  >
+  </textarea>
 </template>
 
 <style scoped>
-textarea {
+.text-detail {
   resize: none;
   outline: none;
   border: none;
-
-  width: 60%;
+  width: 80%;
+  min-width: fit-content;
   height: fit-content;
+  padding: 10px;
+  padding-left: 25px;
+
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-body * {
+.detail-title {
+  color: #559494;
+  font-size: 30px;
+  text-align: center;
+}
+
+.detail-date {
+  color: rgb(71, 70, 70);
+  text-align: end;
+}
+
+/* body * {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   border: 1px solid salmon;
-}
+} */
 </style>

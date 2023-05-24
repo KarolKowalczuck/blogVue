@@ -81,16 +81,14 @@ export default {
             {{ post.title }}
           </h3>
         </RouterLink>
-        <div class="icons">
-          <RouterLink :to="`/edit/${getPostId(post.title)}`">
-            <span class="material-symbols-outlined">edit</span>
-          </RouterLink>
-          <span
-            class="material-symbols-outlined"
-            @click="setupModal(getPostId(post.title))"
-            >delete</span
-          >
-        </div>
+        <RouterLink :to="`/edit/${getPostId(post.title)}`">
+          <span class="material-symbols-outlined edit">edit</span>
+        </RouterLink>
+        <span
+          class="material-symbols-outlined delete"
+          @click="setupModal(getPostId(post.title))"
+          >delete</span
+        >
       </div>
       <h5 class="content-post date-time">{{ post.datetime }}</h5>
       <p class="content-post postcont">{{ post.content }}</p>

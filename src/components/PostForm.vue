@@ -56,7 +56,6 @@ export default {
 </script>
 
 <template>
-  <!-- Está editando: {{ isEditing }} -->
   <form action="" class="forms flex">
     <input
       class="title"
@@ -69,6 +68,7 @@ export default {
       v-model="formData.content"
       placeholder="Escreva seu post aqui.."
       id=""
+      class="text-form"
       cols="30"
       rows="10"
       maxlength="1000"

@@ -9,6 +9,8 @@
   align-items: flex-start;
   margin-block-end: 10px;
   margin-top: 40px;
+
+  position: relative;
 }
 .post * {
   background-color: transparent;
@@ -58,7 +60,7 @@
 .title-post {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
 
   width: 58vw;
@@ -68,13 +70,19 @@
   max-width: 50vw;
   min-width: 10vw;
   line-break: auto;
-  word-break: keep-all;
+  word-break: break-all;
 
   color: #559494;
+  margin-right: 100px;
 }
 
-.icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.delete,
+.edit {
+  position: absolute;
+  right: 1rem;
+}
+
+.edit {
+  right: 3.5rem;
+  top: 2.2rem;
 }
