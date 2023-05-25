@@ -39,10 +39,11 @@ export default {
   border: none;
   width: 80%;
   min-width: fit-content;
-  height: fit-content;
-  padding: 10px;
-  padding-left: 25px;
+  height: 600px;
 
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -54,16 +55,13 @@ export default {
 }
 
 .detail-date {
-  color: rgb(71, 70, 70);
+  color: rgb(116, 116, 116);
   text-align: end;
+  font-weight: lighter;
 }
 
-/* body * {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid salmon;
-} */
+body * {
+  margin-left: 10%;
+  margin-right: 10%;
+}
 </style>

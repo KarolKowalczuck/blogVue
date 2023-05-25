@@ -71,7 +71,7 @@ export default {
       class="text-form"
       cols="30"
       rows="10"
-      maxlength="1000"
+      maxlength="3000"
     >
     </textarea>
 
