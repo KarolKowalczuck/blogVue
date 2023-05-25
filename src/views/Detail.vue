@@ -17,20 +17,51 @@ export default {
 </script>
 
 <template>
-  <h2>
+  <h2 class="detail-title">
     {{ post.title }}
   </h2>
-  <h4>{{ post.datetime }}</h4>
+  <h5 class="detail-date">{{ post.datetime }}</h5>
 
-  <textarea readonly :value="post.content"> </textarea>
+  <textarea
+    class="text-detail"
+    readonly
+    rows="30"
+    cols="50"
+    :value="post.content"
+  >
+  </textarea>
 </template>
 
 <style scoped>
-textarea {
+.text-detail {
   resize: none;
   outline: none;
   border: none;
-
   width: 80%;
+  min-width: fit-content;
+  height: 600px;
+
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.detail-title {
+  color: #559494;
+  font-size: 30px;
+  text-align: center;
+}
+
+.detail-date {
+  color: rgb(116, 116, 116);
+  text-align: end;
+  font-weight: lighter;
+}
+
+body * {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 </style>

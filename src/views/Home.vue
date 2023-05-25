@@ -74,24 +74,24 @@ export default {
       v-for="(post, index) in filteredPosts"
       :key="post.key"
     >
-    <!-- Esse é o post com o id {{ getPostId(post.title) }} -->
-      <div class="flex">
+      <!-- Esse é o post com o id {{ getPostId(post.title) }} -->
+      <div class="title-post">
         <RouterLink :to="`/detail/${getPostId(post.title)}`">
           <h3>
             {{ post.title }}
           </h3>
         </RouterLink>
         <RouterLink :to="`/edit/${getPostId(post.title)}`">
-          <span class="material-symbols-outlined">more_vert</span>
+          <span class="material-symbols-outlined edit">edit</span>
         </RouterLink>
         <span
-          class="material-symbols-outlined"
+          class="material-symbols-outlined delete"
           @click="setupModal(getPostId(post.title))"
           >delete</span
         >
       </div>
-      <h5>{{ post.datetime }}</h5>
-      <p>{{ post.content }}</p>
+      <h5 class="content-post date-time">{{ post.datetime }}</h5>
+      <p class="content-post postcont">{{ post.content }}</p>
     </div>
   </div>
 
@@ -101,10 +101,9 @@ export default {
       <p>
         Você tem certeza que deseja deletar o post '{{ selectedPost?.title }}' ?
       </p>
-
       <div class="modal-actions">
-        <button class="modal-bt" @click="setupModal">Cancelar</button>
-        <button class="modal-bt" @click="deletePost">Confirmar</button>
+        <button class="modal-bt cancel" @click="setupModal">Cancelar</button>
+        <button class="modal-bt confirm" @click="deletePost">Confirmar</button>
       </div>
     </div>
   </div>
@@ -115,20 +114,11 @@ input {
   width: 30vw;
   color: #497e7e;
 }
-/* 
-h3 {
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 
+.material-symbols-outlined {
+  color: #b6b8b8;
+  font-size: 22px;
 }
 
-p {
-  border: 1px solid red;
 
-  width: 95%;
-  height: 100%;
-} */
 </style>

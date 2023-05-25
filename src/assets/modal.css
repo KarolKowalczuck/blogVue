@@ -1,7 +1,7 @@
 .modal {
-  position: absolute;
+  position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
 
@@ -9,9 +9,11 @@
   justify-content: center;
   align-items: center;
 
+
   /* sensação de fundo meio apagado */
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
 }
+
 
 .modal-content {
   justify-content: center;
@@ -20,6 +22,9 @@
   width: 50%;
   max-width: 800px;
   border-radius: 10px;
+  height: 250px;
+  color: rgb(71, 70, 70);
+  border: 2px solid #cc4d53;
 }
 
 .modal-actions {
@@ -31,18 +36,25 @@
 
 .modal-bt {
   outline: none;
-  border: 1px solid blue;
+  border: none;
 
-  /* background-color: #ece7e1; */
-  font-size: 16px;
-  font-family: "Montserrat", sans-serif;
-  color: #497e7e;
-  font-weight: bold;
-
-  /* position: relative; */
   width: 100px;
   height: 50px;
-  border-radius: 150px;
-  align-items: center;
-  justify-content: center;
 }
+
+.modal-content h3{
+
+  font-size: 20px;
+}
+ .modal-content p {
+  text-align: center;
+  height: 50px;
+ }
+
+ .cancel {
+  color: #a03b40;
+ }
+
+ .confirm {
+  color: #559494;
+ }
