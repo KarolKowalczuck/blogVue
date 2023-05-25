@@ -107,6 +107,8 @@ input {
   text-overflow: ellipsis;
 
   font-size: 18px;
+
+  width: 50vw;
 }
 
 textarea {
