@@ -43,7 +43,7 @@
 }
 
 .postcont {
-  word-break: break-all;
+  /* word-break: break-all; */
   line-break: strict;
   white-space: pre-line;
   margin-left: 15px;
